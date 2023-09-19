@@ -1,0 +1,29 @@
+# found 2 bugs
+
+# 1st : when n<20, we are supposed to calculate the factorial of (n-10), but the range in given for loop will exclude the last limit, so the range should be incremented to (n-9).
+
+# 2nd : when n>20, we are supposed to calculate the  sum from 1 to (n-20).
+# and we have a mathematical formula for that which is 
+# (n*(n+1))/2.
+# which can be written as => (n*n + n)/2
+# so, according to this formula, we have to add the elements instead of subtracting it, in the last else condition : out = out + lim
+
+# =======================================
+
+def compute(n):
+    if n < 10:
+        out = n ** 2
+    elif n < 20:
+        out = 1
+        for i in range(1, n-10): # change => range(1, n-9)
+            out *= i
+    else:
+        lim = n - 20
+        out = lim * lim
+        out = out - lim  # change => out = out + lim
+        out = out / 2 
+    print(out)
+
+
+n = int(input("Enter an integer: "))
+compute(n)

@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Random;
 
 public class Main {
+
 	private List<Outcome> outcomes;
 	private Random random;
 
@@ -34,7 +35,9 @@ public class Main {
 	}
 
 	public static void main(String[] args) {
+
 		List<Outcome> outcomes = new ArrayList<>();
+
 		outcomes.add(new Outcome("Head", 35));
 		outcomes.add(new Outcome("Tail", 65));
 
